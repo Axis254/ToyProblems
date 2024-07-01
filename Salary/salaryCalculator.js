@@ -19,13 +19,14 @@ function calculateNetSalary() {
     const netSalary = grossSalary - nssfDeduction - nhifDeduction - payeeTax;
 
     // Display the results in the result element
-    document.getElementById('result').textContent = `
-        Gross Salary: ${grossSalary.toFixed(2)} 
-        NSSF Deduction: ${nssfDeduction.toFixed(2)} 
-        NHIF Deduction: ${nhifDeduction.toFixed(2)} 
-        PAYE Tax: ${payeeTax.toFixed(2)} 
-        Net Salary: ${netSalary.toFixed(2)}
-    `;
+    document.getElementById('result').innerHTML = `
+    Gross Salary: ${grossSalary.toFixed(2)} <br>
+    NSSF Deduction: ${nssfDeduction.toFixed(2)} <br>
+    NHIF Deduction: ${nhifDeduction.toFixed(2)} <br>
+    PAYE Tax: ${payeeTax.toFixed(2)} <br>
+    Net Salary: ${netSalary.toFixed(2)}
+`;
+
 }
 
 function calculateNSSF(grossSalary) {
