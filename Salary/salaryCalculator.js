@@ -3,6 +3,12 @@ function calculateNetSalary() {
     const basicSalary = parseFloat(document.getElementById('basicSalary').value);
     const benefits = parseFloat(document.getElementById('benefits').value);
 
+    // Validate the input values
+    if (isNaN(basicSalary) || isNaN(benefits) || basicSalary < 0 || benefits < 0) {
+        document.getElementById('result').innerHTML = "Error: Please enter valid positive numbers for basic salary and benefits.";
+        return;
+    }
+
     // Calculate the gross salary by adding basic salary and benefits
     const grossSalary = basicSalary + benefits;
 
@@ -25,8 +31,7 @@ function calculateNetSalary() {
     NHIF Deduction: ${nhifDeduction.toFixed(2)} <br>
     PAYE Tax: ${payeeTax.toFixed(2)} <br>
     Net Salary: ${netSalary.toFixed(2)}
-`;
-
+    `;
 }
 
 function calculateNSSF(grossSalary) {
