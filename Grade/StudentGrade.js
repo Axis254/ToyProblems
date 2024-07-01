@@ -4,7 +4,11 @@ function calculateGrade() {
 
     // Initialize the grade variable
     let grade;
-
+    if (isNaN(marks) || marks < 1 || marks > 100) {
+        // If marks are not a number, less than 1, or greater than 100, show an error message
+        document.getElementById('result').textContent = 'Please enter a valid mark between 1 and 100.';
+        return;
+    }
     // Determine the grade based on the marks
     if (marks > 79) {
         // If marks are greater than 79, the grade is 'A'
